@@ -2,6 +2,7 @@ import bodyParser from 'koa-bodyparser'
 import Koa from 'koa'
 import logger from 'koa-logger'
 import mongoose from 'mongoose'
+import cros from './middleware/cros'
 
 import routing from './routes/'
 import { port, connexionString } from './config'
@@ -15,6 +16,7 @@ const app = new Koa()
 app
   .use(logger())
   .use(bodyParser())
+  .use(cros)
 
 routing(app)
 
