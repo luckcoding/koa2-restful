@@ -10,7 +10,6 @@ import { port, connexionString } from './config'
 mongoose.connect(connexionString)
 mongoose.connection.on('error', console.error)
 
-// Create Koa Application
 const app = new Koa()
 
 app
@@ -20,7 +19,6 @@ app
 
 routing(app)
 
-// Start the application
-app.listen(port, () => console.log(`✅  The server is running at http://localhost:${port}/`))
+app.listen(port, () => console.log(`✅ The server is running at http://localhost:${port}/`))
 
 export default app
