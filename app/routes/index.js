@@ -1,7 +1,6 @@
-import shop from './shop'
-import goods from './goods'
+import path from './path'
 
-const routes = [shop,goods]
+const routes = [path]
 
 export default function (app) {
   routes.forEach((route) => {

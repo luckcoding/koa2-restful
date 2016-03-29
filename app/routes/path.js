@@ -1,14 +1,14 @@
 import Router from 'koa-router'
 
 import { baseApi } from '../config'
-import {save} from '../controllers/goods.js'
+import { register } from '../controllers/path.js'
 
-const api = 'goods'
+const api = 'path'
 
 const router = new Router()
 
 router.prefix(`/${baseApi}/${api}`)
 
-router.post('/save', save)
+router.post('/register', register)
 
 export default router

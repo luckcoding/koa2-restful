@@ -1,6 +1,8 @@
 import bodyParser from 'koa-bodyparser'
 import Koa from 'koa'
 import logger from 'koa-logger'
+import convert from 'koa-convert'
+import session from 'koa-session'
 import mongoose from 'mongoose'
 import cros from './middleware/cros'
 
@@ -13,9 +15,34 @@ mongoose.connection.on('error', console.error)
 const app = new Koa()
 
 app
-  .use(logger())
-  .use(bodyParser())
-  .use(cros)
+  .use(convert(logger()))
+  .use(convert(bodyParser()))
+
+/**
+ * 跨域
+ */
+app.use(cros)
+
+app.on('error', function(err, ctx){
+  log.error('server error', err, ctx)
+})
+
+/**
+ * 压缩json返回中的空格
+ */
+app.jsonSpaces = 0
+
+/**
+ * key
+ */
+app.keys = ['key']
+
+/**
+ * session
+ */
+app.use(convert(session(app)))
+
+
 
 routing(app)
 
