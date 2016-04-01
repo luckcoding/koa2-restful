@@ -33,6 +33,12 @@ export default function pipeMiddleware() {
 }
 
 function spellRespone(respCode, respDesc, respBody) {
+  // mongod validation failed callback
+  respDesc.indexOf('validation failed') != -1
+                                        ? respDesc = '数据格式非法'
+                                        : respDesc
+
+  // callback
   return {
     respHead: {
       respCode,
