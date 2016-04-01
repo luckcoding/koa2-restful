@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "koa-convert": "^1.2.0",
-    "koa-session": "^3.3.1"
+    "koa-session": "^3.3.1",
+    "mongoose-validator": "^1.2.4"
   }
 }
