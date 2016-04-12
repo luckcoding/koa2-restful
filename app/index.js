@@ -9,9 +9,9 @@ import cros from './middleware/crosMiddleware'
 import pipeMiddleware from './middleware/pipeMiddleware'
 
 import routing from './routes/'
-import { port, connexionString } from './config'
+import { port, mongodb } from './config'
 
-mongoose.connect(connexionString)
+mongoose.connect(mongodb)
 mongoose.connection.on('error', console.error)
 
 const app = new Koa()
@@ -19,12 +19,18 @@ const app = new Koa()
 app.jsonSpaces = 0 // 压缩json返回中的空格
 app.keys = ['key']
 
-app.use(cros) // 跨域
-
-app.use(convert(logger()))
-app.use(convert(bodyParser()))
-app.use(convert(session(app)))
-app.use(pipeMiddleware())
+app.use(convert.compose(
+  cros, // 跨域
+  logger(),
+  bodyParser(),
+  session(app),
+  pipeMiddleware()
+))
+// app.use(cros) // 跨域
+// app.use(convert(logger()))
+// app.use(convert(bodyParser()))
+// app.use(convert(session(app)))
+// app.use(pipeMiddleware())
 
 routing(app)
 

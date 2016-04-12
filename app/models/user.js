@@ -12,11 +12,11 @@ const userSchema = new Schema({
       message: '邮箱格式错误',
     })
   },
-  name: { type: String, required: true, minlength: 10 },
+  name: { type: String, minlength: 10 },
   password: { type: String, required: true },
   registed: { type: Date, default: Date.now },
   regdevice: { type: String },
-  regcity: { type: String, required: true }
+  regcity: { type: String, required: true, }
 })
 
 /**
@@ -24,7 +24,7 @@ const userSchema = new Schema({
  */
 
 // find by id
-userSchema.statics.findById = async function (_id) {
+userSchema.statics.findbyid = async function (_id) {
   const exists = await this.findById(_id)
   if (exists) {
     return {
@@ -34,6 +34,7 @@ userSchema.statics.findById = async function (_id) {
   }
 }
 
+// create
 userSchema.statics.create = async function (obj) {
   const user = new this(obj)
 
