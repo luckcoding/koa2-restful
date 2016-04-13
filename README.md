@@ -4,7 +4,12 @@
 
 > wating ...
 
-### run
+### install
 
 	npm install
-	npm run
+
+### run
+
+###### develope
+
+> npm run dev
