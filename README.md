@@ -1,6 +1,6 @@
 # koa2-restfull
 
-**just** for [a react project](https://github.com/luckcoding/react-webapp)
+**just a simple demo**
 
 > wating ...
 
