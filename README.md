@@ -1,12 +1,12 @@
-# koa2-restfull
+# koa2-restful
 
 **just a simple demo**
 
-> wating ...
+**Please go to [https://github.com/luckcoding/hotchcms](https://github.com/luckcoding/hotchcms)**
 
 ### install
 
-	npm install
+  npm install
 
 ### run
 
