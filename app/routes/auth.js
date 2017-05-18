@@ -1,9 +1,9 @@
 import Router from 'koa-router'
 
 import { baseApi } from '../config'
-import { register } from '../controllers/path.js'
+import { register } from '../controllers/auth.js'
 
-const api = 'path'
+const api = 'auth'
 
 const router = new Router()
 

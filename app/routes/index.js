@@ -1,6 +1,6 @@
-import path from './path'
+import auth from './auth'
 
-const routes = [path]
+const routes = [auth]
 
 export default function (app) {
   routes.forEach((route) => {

@@ -1,5 +1,5 @@
 import User from '../models/user.js'
-import {isEmail} from '../utils/rules.js'
+import { isEmail } from '../utils/rules.js'
 
 export async function register (ctx) {
   // ====================

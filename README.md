@@ -1,15 +1,14 @@
 # koa2-restful
 
-**just a simple demo**
+> Just A Simple Demo
 
 **Please go to [https://github.com/luckcoding/hotchcms](https://github.com/luckcoding/hotchcms)**
 
-### install
 
-  npm install
+## run
 
-### run
-
-###### develope
-
-> npm run dev
+1. `$ git clone https://github.com/luckcoding/koa2-restful.git`
+2. `$ cd koa2-restful && npm install`
+3. `$ npm install`
+4. **sart mongodb**
+5. `$ npm run dev ` or `$ npm start`
